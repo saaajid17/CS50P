@@ -1,0 +1,13 @@
+text = input("Expression? ")
+x = float(text.split()[0])
+y = text.split()[1]
+z = float(text.split()[2])
+
+if y == "+" :
+    print(f"{(x+z):.1f}")
+elif y == "-" :
+    print(f"{(x-z):.1f}")
+elif y == "*" :
+    print(f"{(x*z):.1f}")
+elif y == "/" :
+    print(f"{(x/z):.1f}")
