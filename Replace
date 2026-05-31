@@ -1,0 +1,2 @@
+text = input("We can't replace everthing, right ?")
+print(text.replace(" ","..."))
