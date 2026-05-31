@@ -1,0 +1,7 @@
+text = input("Keep it low, will you ?")
+print(text.lower())
+    #text.lower()      # all lowercase
+    #text.upper()      # all uppercase
+    #text.capitalize() # First letter uppercase, rest lowercase
+    #text.title()      # First letter of each word uppercase
+    #text.swapcase()   # Upper ↔ Lower
