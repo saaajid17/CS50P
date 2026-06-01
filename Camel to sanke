@@ -1,0 +1,8 @@
+text = input("camelCase name: ")
+snake = ""
+for letter in text :
+    if letter.isupper() :
+        snake += "_" + letter.lower()
+    else :
+        snake += letter
+print("snake_case: ", snake) #print("snake_case: " + snake)
