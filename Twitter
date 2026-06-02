@@ -1,0 +1,6 @@
+text = input("Input: ")
+snake = ""
+for letter in text :
+    if letter not in "AEIOUaeiou":
+        snake += letter
+print("Output: ", snake) #print("snake_case: " + snake)
