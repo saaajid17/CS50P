@@ -1,0 +1,32 @@
+calendar = [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+            ]
+while True :
+    try :
+        date = input("Date:")
+        if "/" in date:
+            month,day,year = date.split("/")
+            month = int(month)
+            day = int(day)
+            year = int(year)
+            print(f"{year}-{month:02}-{day:02}")
+        else :
+            month,day,year = date.split()
+            mon = int(calendar.index(month)+1)
+            day = int(day.replace(",",""))
+            year = int(year)
+            print(f"{year}-{mon:02}-{day:02}")
+        break
+    except ValueError :
+        pass
