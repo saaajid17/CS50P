@@ -1,0 +1,23 @@
+total = float(0)
+while True:
+    try :
+        text = input("Item: ")
+        text = text.lower()
+        text = text.title()
+        menu = {
+        "Baja Taco": 4.25,
+        "Burrito": 7.50,
+        "Bowl": 8.50,
+        "Nachos": 11.00,
+        "Quesadilla": 8.50,
+        "Super Burrito": 8.50,
+        "Super Quesadilla": 9.50,
+        "Taco": 3.00,
+        "Tortilla Salad": 8.00
+        }
+        for key in menu :  
+            if text == key :
+                total = total + menu[key]
+                print("Total: $"+str(round(total,2)))
+    except EOFError :
+        break   
