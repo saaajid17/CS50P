@@ -1,0 +1,12 @@
+items = {}
+while True:
+    try :
+        item = input()
+        if item not in items:
+            items[item] =1
+        else :
+            items[item] +=1
+    except EOFError :
+        break 
+for key in sorted(items) :
+    print(items[key],key.upper())
