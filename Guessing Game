@@ -1,0 +1,17 @@
+import sys
+import random
+while True:
+    n = int(input("Level: "))
+    if n >0 :
+        break
+guess = random.randint(1,n)
+while True:
+    user = int(input("Guess: "))
+    if user == guess :
+        print("Just right!")
+        break
+    elif user < guess :
+        print("Too small!")
+    else :
+        print("Too large!")
+ 
