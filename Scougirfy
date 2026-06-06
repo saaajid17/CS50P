@@ -1,0 +1,38 @@
+import sys
+import csv
+
+def main():
+    # Check command-line arguments
+    if len(sys.argv) != 3:
+        sys.exit("Usage: python scourgify.py input.csv output.csv")
+
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
+
+    try:
+        students = []
+
+        # Read input CSV
+        with open(input_file, "r") as file:
+            reader = csv.DictReader(file)
+
+            for row in reader:
+                last, first = row["name"].split(", ")
+                students.append({
+                    "first": first,
+                    "last": last,
+                    "house": row["house"]
+                })
+
+        # Write output CSV
+        with open(output_file, "w", newline="") as file:
+            writer = csv.DictWriter(file, fieldnames=["first", "last", "house"])
+            writer.writeheader()
+            writer.writerows(students)
+
+    except FileNotFoundError:
+        sys.exit(f"Could not read {input_file}")
+
+
+if __name__ == "__main__":
+    main()
