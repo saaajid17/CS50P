@@ -1,0 +1,12 @@
+import re
+
+def main():
+    text = input("Text: ")
+    print(count_um(text))
+
+
+def count_um(s):
+    return len(re.findall(r"\bum\b", s, re.IGNORECASE))
+
+if __name__ == "__main__":
+    main()
