@@ -1,0 +1,25 @@
+def main():
+    ip = input("IPv4 Address: ")
+    print(validate(ip))
+
+def validate(ip):
+    parts = ip.split(".")
+    if len(parts)!=4:
+        return False
+    try :
+        a,b,c,d = ip.split(".")
+        a = int(a)
+        b = int(b)
+        c = int(c)
+        d = int(d)
+    except ValueError :
+        return False
+    if not (0 <= a <= 255 and
+        0 <= b <= 255 and
+        0 <= c <= 255 and
+        0 <= d <= 255):
+        return False 
+    else :
+        return True
+if __name__ == "__main__":
+    main()
