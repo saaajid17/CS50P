@@ -1,0 +1,32 @@
+from datetime import date
+import sys
+import inflect
+
+
+def main():
+    try:
+        text = input("Date of birth: ").strip()
+        year, month, day = text.split("-")
+
+        birthday = date(int(year), int(month), int(day))
+    except ValueError:
+        sys.exit("Invalid Date")
+
+    minutes = minutes_old(birthday)
+
+    p = inflect.engine()
+    words = p.number_to_words(minutes, andword="")
+
+    print(words.capitalize(), "minutes")
+
+
+def minutes_old(birthday):
+    today = date.today()
+
+    days = (today - birthday).days
+
+    return days * 24 * 60
+
+
+if __name__ == "__main__":
+    main()
